@@ -1,14 +1,34 @@
+<!--
+  Generated template for the HomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+      <ion-buttons left>
+          <button ion-button>
+              <ion-icon name="list" style="font-size: 1.6em"></ion-icon>
+          </button>
+        </ion-buttons>
+      <ion-buttons right>
+          <button ion-button padding>
+              <ion-icon name="search" style="font-size: 1.6em"></ion-icon>
+          </button>
+          <button ion-button>
+              <ion-icon name="cart" style="font-size: 1.6em"></ion-icon>
+          </button>
+      </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+<ion-content  class="card-background-page" >
+  <ion-row margin>
+      <ion-card  no-margin *ngFor="let category of categories" col-5 col-sm-5  (click)="navToCategoryDetailsPage(category.id)">
+          <img [src]="category.category_img" style="background-size: cover;" width=100% height=100% />
+          <div class="card-title">{{category.name}}</div>
+      </ion-card>
+  </ion-row>
+
 </ion-content>
